@@ -12,19 +12,19 @@ df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 @st.experimental_memo(ttl=60 * 60 * 24)
 def get_chart(data):
     hover = alt.selection_single(
-        fields=["date"],
+        fields=["Periodo"],
         nearest=True,
         on="mouseover",
         empty="none",
     )
 
     lines = (
-        alt.Chart(data, title="Evolution of stock prices")
+        alt.Chart(data, title="Evolución de Indices IPC")
         .mark_line()
         .encode(
-            x="date",
-            y="price",
-            color="symbol",
+            x="Periodo",
+            y="Indice",
+            color="Tipo",
             # strokeDash="symbol",
         )
     )
@@ -37,12 +37,12 @@ def get_chart(data):
         alt.Chart(data)
         .mark_rule()
         .encode(
-            x="yearmonthdate(date)",
-            y="price",
+            x="yearmonthdate(Periodo)",
+            y="Indice",
             opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
             tooltip=[
-                alt.Tooltip("date", title="Date"),
-                alt.Tooltip("price", title="Price (USD)"),
+                alt.Tooltip("Periodo", title="Periodo"),
+                alt.Tooltip("Indice", title="Indice"),
             ],
         )
         .add_selection(hover)
