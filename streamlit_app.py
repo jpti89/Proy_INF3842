@@ -5,9 +5,9 @@ import streamlit as st
 st.title("Hola Mundo!!!")
 df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
-st.set_page_config(
-    page_title="Time series annotations", page_icon="⬇", layout="centered"
-)
+#st.set_page_config(
+#    page_title="Time series annotations", page_icon="⬇", layout="centered"
+#)
 
 @st.experimental_memo(ttl=60 * 60 * 24)
 def get_chart(data):
