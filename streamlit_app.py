@@ -65,7 +65,7 @@ ANNOTATIONS = [
 
 # Create a chart with annotations
 annotations_df = pd.DataFrame(ANNOTATIONS, columns=["Periodo", "Tipo"])
-annotations_df.date = pd.to_datetime(annotations_df.date)
+annotations_df.Periodo = pd.to_datetime(annotations_df.Periodo)
 annotations_df["Indice"] = 0
 annotation_layer = (
     alt.Chart(annotations_df)
