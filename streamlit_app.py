@@ -2,12 +2,12 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-st.title("Hola Mundo!!!")
+st.title("Evolución del Índice de precios al consumidor en Chile ")
 df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
-#st.set_page_config(
-#    page_title="Time series annotations", page_icon="⬇", layout="centered"
-#)
+st.set_page_config(
+    page_title="IPC Chile", layout="centered"
+)
 
 @st.experimental_memo(ttl=60 * 60 * 24)
 def get_chart(data):
@@ -57,10 +57,7 @@ chart = get_chart(df)
 
 # Input annotations
 ANNOTATIONS = [
-    ("Mar 01, 2018", "Pretty good day for GOOG"),
-    ("Dec 01, 2017", "Something's going wrong for GOOG & AAPL"),
-    ("Nov 01, 2018", "Market starts again thanks to..."),
-    ("Dec 01, 2019", "Small crash for GOOG after..."),
+    ("Mar 01, 2019", "Inicio Pandemia en Chile"),
 ]
 
 # Create a chart with annotations
@@ -69,7 +66,7 @@ annotations_df.Periodo = pd.to_datetime(annotations_df.Periodo)
 annotations_df["Indice"] = 0
 annotation_layer = (
     alt.Chart(annotations_df)
-    .mark_text(size=15, text="⬇", dx=-14, dy=10, align="center")
+    .mark_text(size=15, text="O", dx=-14, dy=10, align="center")
     .encode(
         x="Periodo:T",
         y=alt.Y("Indice:Q"),
