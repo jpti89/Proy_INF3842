@@ -2,12 +2,14 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-st.title("Evolución del Índice de precios al consumidor en Chile ")
-df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
-
 st.set_page_config(
     page_title="IPC Chile", layout="centered"
 )
+
+st.title("Evolución del Índice de precios al consumidor en Chile ")
+df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
+
+
 
 @st.experimental_memo(ttl=60 * 60 * 24)
 def get_chart(data):
