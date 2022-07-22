@@ -5,8 +5,6 @@ import streamlit as st
 st.title("Hola Mundo!!!")
 df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
-@st.experimental_memo
-
 # Original time series chart. Omitted `get_chart` for clarity
 chart = get_chart(df)
 
