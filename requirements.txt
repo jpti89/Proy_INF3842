@@ -1,0 +1,4 @@
+altair
+streamlit==1.5.0
+pandas
+click==8
