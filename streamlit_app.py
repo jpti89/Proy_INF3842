@@ -5,15 +5,17 @@ import streamlit as st
 st.title("Hola Mundo!!!")
 df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
+@st.experimental_memo
+
 # Original time series chart. Omitted `get_chart` for clarity
 chart = get_chart(df)
 
 # Input annotations
 ANNOTATIONS = [
-#    ("Mar 01, 2008", "Pretty good day for GOOG"),
-#    ("Dec 01, 2007", "Something's going wrong for GOOG & AAPL"),
-#    ("Nov 01, 2008", "Market starts again thanks to..."),
-#    ("Dec 01, 2009", "Small crash for GOOG after..."),
+    ("Mar 01, 2018", "Pretty good day for GOOG"),
+    ("Dec 01, 2017", "Something's going wrong for GOOG & AAPL"),
+    ("Nov 01, 2018", "Market starts again thanks to..."),
+    ("Dec 01, 2019", "Small crash for GOOG after..."),
 ]
 
 # Create a chart with annotations
