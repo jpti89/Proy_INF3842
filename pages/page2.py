@@ -2,6 +2,8 @@ import streamlit as st
 import altair as alt
 import pandas as pd
 
+st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+
 st.markdown("# Page 2 ❄️")
 st.sidebar.markdown("# Page 2 ❄️")
 
