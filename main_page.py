@@ -7,6 +7,12 @@ st.set_page_config(
 )
 
 
+
+selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
+page_names_to_funcs[selected_page]()
+
+
+
 st.title("Evolución del Índice de precios al consumidor en Chile ")
 df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
@@ -78,3 +84,9 @@ annotation_layer = (
 
 # Display both charts together
 st.altair_chart((chart + annotation_layer).interactive(), use_container_width=True)
+
+page_names_to_funcs = {
+    "Main Page": main_page,
+    "Page 2": page2,
+    "Page 3": page3,
+}
