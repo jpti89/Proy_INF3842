@@ -80,7 +80,7 @@ def main_page():
 
     # Display both charts together
     st.altair_chart((chart + annotation_layer).interactive(), use_container_width=True)
-)
+
 page_names_to_funcs = {
     "Main Page": main_page,
     "Page 2": page2,
