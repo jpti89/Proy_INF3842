@@ -82,4 +82,4 @@ def main_page():
 
 
 if __name__ == "__main__":
-    run()
+    main_page()
