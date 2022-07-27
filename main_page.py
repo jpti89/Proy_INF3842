@@ -56,7 +56,7 @@ def main_page():
     chart = get_chart(df)
 
     ANNOTATIONS = [
-        ("Mar 01, 2019", "Inicio Pandemia en Chile"),
+        ("2019-04-01", "Inicio Pandemia en Chile"),
     ]
 
     annotations_df = pd.DataFrame(ANNOTATIONS, columns=["Periodo", "Tipo"])
