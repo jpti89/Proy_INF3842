@@ -4,9 +4,14 @@ import streamlit as st
 
 def main_page():
 
-    st.title("Evolución del Índice de precios al consumidor en Chile ")
+    st.title("Evolución del IPC en Chile ")
     df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
-
+    
+    st.markdown("## ¿Qué es el IPC?")
+    st.write(
+    """El Índice de Precios al Consumidor (IPC) es un indicador económico elaborado y publicado por el INE, que mide mes a mes la variación conjunta de los precios de una canasta de bienes y servicios representativa del consumo de los hogares del país."""
+    )
+    
     @st.experimental_memo(ttl=60 * 60 * 24)
     def get_chart(data):
         hover = alt.selection_single(
