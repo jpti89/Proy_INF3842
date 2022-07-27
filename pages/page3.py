@@ -5,7 +5,6 @@ import pandas as pd
 st.set_page_config(page_title="Variación % IPC", page_icon="📈")
 
 st.markdown("# Variación porcentual IPC")
-st.sidebar.header("Variación % IPC")
 st.write(
     """Variación """
 )

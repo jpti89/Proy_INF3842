@@ -1,34 +1,8 @@
 import streamlit as st
-import inspect
-import textwrap
-import time
-import numpy as np
-from utils import show_code
+import altair as alt
+import pandas as pd
 
-
-def plotting_demo():
-    progress_bar = st.sidebar.progress(0)
-    status_text = st.sidebar.empty()
-    last_rows = np.random.randn(1, 1)
-    chart = st.line_chart(last_rows)
-
-    for i in range(1, 101):
-        new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
-        status_text.text("%i%% Complete" % i)
-        chart.add_rows(new_rows)
-        progress_bar.progress(i)
-        last_rows = new_rows
-        time.sleep(0.05)
-
-    progress_bar.empty()
-
-    # Streamlit widgets automatically run the script from top to bottom. Since
-    # this button is not connected to any other logic, it just causes a plain
-    # rerun.
-    st.button("Re-run")
-
-
-st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+st.set_page_config(page_title="Conceptos que componen el IPC", page_icon="📊")
 st.markdown("# Plotting Demo")
 st.sidebar.header("Plotting Demo")
 st.write(
@@ -37,6 +11,14 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
 5 seconds. Enjoy!"""
 )
 
-plotting_demo()
+base = alt.Chart(Ponderacion).encode(
+    theta=alt.Theta("Ponderacion:Q", stack=True), color=alt.Color("Descripción:N")
+).transform_calculate(
+    emoji= "{'Alimentos': '🍞', 'Alcohol y tabaco': '🍷', 'Vestuario': '👚', 'Vivienda y servicios': '🏡',  'Equipamiento vivienda': '🛠', 'Salud': '🏥',  'Transporte': '🚌', 'Comunicaciones': '📱', 'Cultura': '🎭', 'Educación': '📚', 'Restaurantes y hoteles': '🏨', 'Bienes y servicios diversos': '📦'}[datum.Descripción]"
+)
 
-show_code(plotting_demo)
+pie = base.mark_arc(outerRadius=120)
+text = base.mark_text(radius=140, size=20).encode(text="Porcentaje:N")
+text2 = base.mark_text(radius=170, size=20).encode(text="emoji:N")
+
+st.altair_chart(pie + text + text2, use_container_width=True)
