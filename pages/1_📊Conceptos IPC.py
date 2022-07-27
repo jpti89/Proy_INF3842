@@ -17,8 +17,11 @@ base = alt.Chart(Ponderacion).encode(
     emoji= "{'Alimentos': '🍞', 'Alcohol y tabaco': '🍷', 'Vestuario': '👚', 'Vivienda y servicios': '🏡',  'Equipamiento vivienda': '🛠', 'Salud': '🏥',  'Transporte': '🚌', 'Comunicaciones': '📱', 'Cultura': '🎭', 'Educación': '📚', 'Restaurantes y hoteles': '🏨', 'Bienes y servicios diversos': '📦'}[datum.Descripción]"
 )
 
-pie = base.mark_arc(outerRadius=120)
-text = base.mark_text(radius=140, size=20).encode(text="Porcentaje:N")
-text2 = base.mark_text(radius=170, size=20).encode(text="emoji:N")
+pie = base.mark_arc(outerRadius=150).properties(
+    width=600,height=500
+)
+text = base.mark_text(radius=170, size=20).encode(text="Porcentaje:N")
+text2 = base.mark_text(radius=210, size=40).encode(text="emoji:N")
+
 
 st.altair_chart(pie + text + text2, use_container_width=True)
