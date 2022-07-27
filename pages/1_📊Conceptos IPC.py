@@ -18,7 +18,7 @@ base = alt.Chart(Ponderacion).encode(
 )
 
 pie = base.mark_arc(outerRadius=150).properties(
-    width=600,height=500
+    width=800,height=500
 )
 text = base.mark_text(radius=170, size=20).encode(text="Porcentaje:N")
 text2 = base.mark_text(radius=210, size=40).encode(text="emoji:N")
