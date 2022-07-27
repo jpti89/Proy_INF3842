@@ -17,20 +17,19 @@ def main_page():
         )
 
         lines = (
-            alt.Chart(data)
+            alt.Chart(data, title="Evolución de Indices IPC")
             .mark_line()
             .encode(
                 x="Periodo",
                 y="Indice",
                 color="Tipo",
-                # strokeDash="symbol",
             )
         )
 
-        # Draw points on the line, and highlight based on selection
+
         points = lines.transform_filter(hover).mark_circle(size=65)
 
-        # Draw a rule at the location of the selection
+
         tooltips = (
             alt.Chart(data)
             .mark_rule()
@@ -49,16 +48,12 @@ def main_page():
         return (lines + points + tooltips).interactive()
         
         
-
-    # Original time series chart. Omitted `get_chart` for clarity
     chart = get_chart(df)
 
-    # Input annotations
     ANNOTATIONS = [
         ("Mar 01, 2019", "Inicio Pandemia en Chile"),
     ]
 
-    # Create a chart with annotations
     annotations_df = pd.DataFrame(ANNOTATIONS, columns=["Periodo", "Tipo"])
     annotations_df.Periodo = pd.to_datetime(annotations_df.Periodo)
     annotations_df["Indice"] = 0
@@ -75,7 +70,6 @@ def main_page():
     height=500
     )
 
-    # Display both charts together
     st.altair_chart((chart + annotation_layer).interactive(), use_container_width=True)
 
 
