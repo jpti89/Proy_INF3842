@@ -7,7 +7,7 @@ st.set_page_config(page_title="Plotting Demo", page_icon="📈")
 st.markdown("# Page 2 ❄️")
 st.sidebar.markdown("# Page 2 ❄️")
 
-df = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
+Apertura = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
 
 selection = alt.selection_multi(fields=['Concepto'], bind='legend')
 
