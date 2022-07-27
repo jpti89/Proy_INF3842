@@ -2,8 +2,6 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-
-
 def main_page():
 
     st.title("Evolución del Índice de precios al consumidor en Chile ")

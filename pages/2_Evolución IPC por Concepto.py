@@ -3,8 +3,11 @@ import altair as alt
 import pandas as pd
 
 st.set_page_config(page_title="Evolución de IPC", page_icon="📈")
-
 st.markdown("# Evolución de IPC por concepto")
+
+st.write(
+    """Evolución"""
+)
 
 Apertura = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
 
