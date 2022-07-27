@@ -2,7 +2,7 @@ import streamlit as st
 import altair as alt
 import pandas as pd
 
-st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+st.set_page_config(page_title="Evolución de IPC", page_icon="📈")
 
 st.markdown("# Evolución de IPC por concepto")
 
