@@ -11,6 +11,8 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
 5 seconds. Enjoy!"""
 )
 
+Ponderacion = pd.read_csv('Ponderacion.csv', delimiter=';')
+
 base = alt.Chart(Ponderacion).encode(
     theta=alt.Theta("Ponderacion:Q", stack=True), color=alt.Color("Descripción:N")
 ).transform_calculate(
