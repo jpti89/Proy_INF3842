@@ -71,6 +71,8 @@ def main_page():
             tooltip=["Tipo"],
         )
         .interactive()
+    ).properties(
+    height=500
     )
 
     # Display both charts together
