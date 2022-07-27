@@ -6,7 +6,6 @@ import streamlit as st
 
 def main_page():
 
-
     st.title("Evolución del Índice de precios al consumidor en Chile ")
     df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
 
