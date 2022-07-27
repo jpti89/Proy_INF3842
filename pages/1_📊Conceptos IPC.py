@@ -26,8 +26,11 @@ with col1:
     st.altair_chart(pie + text + text2, use_container_width=False)
 
 with col2:
+    st.markdown("## ¿Cómo se obtiene el IPC?")
     st.write(
-    """Conceptos"""
+    """Todos los meses encuestadores del INE se encargan de registrar el precio de los productos que consumen los hogares, visitando almacenes de barrio, ferias, supermercados, grandes tiendas, etc. Además, se visitan hogares particulares para consultar valores pagados por arriendo o servicio doméstico.
+
+    Los productos medidos componen la canasta de bienes y servicios, que está compuesta por 321 productos, desde elementos básicos como pan y arroz, hasta productos o servicios de recreación, como una entrada al cine o un televisor. Es de notar que estos 303 productos son los más consumidos por las familias chilenas."""
     )
 
 
