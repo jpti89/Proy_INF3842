@@ -24,7 +24,7 @@ text = base.mark_text(radius=170, size=20).encode(text="Porcentaje:N")
 text2 = base.mark_text(radius=210, size=40).encode(text="emoji:N")
 
 
-st.altair_chart(pie + text + text2, use_container_width=True)
+st.altair_chart(pie + text + text2, use_container_width=False)
 
 st.markdown("# Evolución de IPC por concepto")
 
