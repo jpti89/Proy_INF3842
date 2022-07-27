@@ -17,7 +17,7 @@ def main_page():
         )
 
         lines = (
-            alt.Chart(data, title="Evolución de Indices IPC")
+            alt.Chart(data)
             .mark_line()
             .encode(
                 x="Periodo",
