@@ -50,7 +50,7 @@ def main_page():
                 x="Periodo",
                 alt.Y("Indice", scale=alt.Scale(domain=(90, 130))
             )
-        )
+            )
 
 
         points = lines.transform_filter(hover).mark_circle(size=65)
