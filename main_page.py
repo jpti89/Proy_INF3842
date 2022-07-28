@@ -47,8 +47,8 @@ def main_page():
             alt.Chart(data, title="Evolución de Indices IPC")
             .mark_line()
             .encode(
-                x="Periodo",
-                alt.Y("Indice", scale=alt.Scale(domain=(90, 130)))
+                x="Periodo:T",
+                alt.Y("Indice:Q", scale=alt.Scale(domain=(90, 130)))
                     )
                 )
 
