@@ -43,13 +43,10 @@ def main_page():
             empty="none",
         )
 
-        lines = alt.Chart(data, title="Evolución de Indices IPC")
-                .mark_line()
-                .encode(
+        lines = alt.Chart(data, title="Evolución de Indices IPC").mark_line().encode(
                     x="Periodo:T",
                     alt.Y("Indice:Q", scale=alt.Scale(domain=(90, 130)))
-                        )
-                
+                    )
 
         points = lines.transform_filter(hover).mark_circle(size=65)
 
