@@ -48,8 +48,7 @@ def main_page():
             .mark_line()
             .encode(
                 x="Periodo",
-                y="Indice",
-                color="Tipo",
+                alt.Y("Indice", scale=alt.Scale(domain=(90, 130))
             )
         )
 
@@ -81,7 +80,7 @@ def main_page():
         ("2019-04-01", "Inicio Pandemia en Chile"),
     ]
 
-    annotations_df = pd.DataFrame(ANNOTATIONS, columns=["Periodo", "Tipo"])
+    annotations_df = pd.DataFrame(ANNOTATIONS, columns=["Periodo"])
     annotations_df.Periodo = pd.to_datetime(annotations_df.Periodo)
     annotations_df["Indice"] = 0
     annotation_layer = (
@@ -90,7 +89,6 @@ def main_page():
         .encode(
             x="Periodo:T",
             y=alt.Y("Indice:Q"),
-            tooltip=["Tipo"],
         )
         .interactive()
     ).properties(
