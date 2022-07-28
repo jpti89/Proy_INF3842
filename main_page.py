@@ -7,14 +7,31 @@ def main_page():
     st.title("Evolución del IPC en Chile ")
     df = pd.read_csv('Data/indice_IPC.csv', delimiter=';')
     
-    st.markdown("## ¿Qué es el IPC?")
-    st.write(
-    """El Índice de Precios al Consumidor (IPC) es un indicador económico elaborado y publicado por el INE, que mide mes a mes la variación conjunta de los precios de una canasta de bienes y servicios representativa del consumo de los hogares del país."""
-    )
-    st.markdown("## ¿Para qué se usa el IPC?")
-    st.write(
-    """Este indicador se usa frecuentemente para reajustar arriendos, créditos, sueldos y salarios, y diferentes contratos públicos y privados. Además, se usa para reajustar diversas tarifas reguladas por la autoridad como los servicios básicos por ejemplo, electricidad y agua potable, locomoción colectiva, entre otros. El IPC también se utiliza para el cálculo de la Unidad de Fomento (UF) y la Unidad Tributaria Mensual (UTM)."""
-    )
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("## ¿Qué es el IPC?")
+        st.write(
+        """El Índice de Precios al Consumidor (IPC) es un indicador económico elaborado y publicado por el INE, que mide mes a mes la variación conjunta de los precios de una canasta de bienes y servicios representativa del consumo de los hogares del país."""
+        )
+        
+
+    with col2:
+        st.image("img/02-ipc.jpg")
+
+    col3, col4 = st.columns(2)
+    
+    with col3:
+        st.image("img/03-ipc.png")
+        
+
+    with col4:
+        st.markdown("## ¿Para qué se usa el IPC?")
+        st.write(
+        """Este indicador se usa frecuentemente para reajustar arriendos, créditos, sueldos y salarios, y diferentes contratos públicos y privados. Además, se usa para reajustar diversas tarifas reguladas por la autoridad como los servicios básicos por ejemplo, electricidad y agua potable, locomoción colectiva, entre otros. El IPC también se utiliza para el cálculo de la Unidad de Fomento (UF) y la Unidad Tributaria Mensual (UTM)."""
+        )
+        
+       
     st.markdown("### Prueba haciendo Zoom en el siguiente grafico para ver su evolución en el tiempo")
     
     @st.experimental_memo(ttl=60 * 60 * 24)
