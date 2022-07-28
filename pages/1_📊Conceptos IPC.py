@@ -7,7 +7,7 @@ st.markdown("# Conceptos que componen el IPC")
 
 Ponderacion = pd.read_csv('Data/Ponderacion.csv', delimiter=';')
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([3, 1])
 
 with col1:
     base = alt.Chart(Ponderacion).encode(
