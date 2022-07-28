@@ -48,10 +48,9 @@ def main_page():
             .mark_line()
             .encode(
                 x="Periodo",
-                alt.Y("Indice", scale=alt.Scale(domain=(90, 130))
-            )
-            )
-
+                alt.Y("Indice", scale=alt.Scale(domain=(90, 130)))
+                    )
+                )
 
         points = lines.transform_filter(hover).mark_circle(size=65)
 
