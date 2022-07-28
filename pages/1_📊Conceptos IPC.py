@@ -35,9 +35,7 @@ with col2:
 
 st.markdown("## Evolución de IPC por concepto")
 
-st.write(
-    """Evolución"""
-)
+st.markdown("### Prueba presionando en cada concepto a la derecha del grafico de abajo")
 
 Apertura = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
 
