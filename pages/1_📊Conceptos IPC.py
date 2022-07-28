@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 import altair as alt
 import pandas as pd
 
@@ -26,15 +26,15 @@ with col1:
     st.altair_chart(pie + text + text2, use_container_width=False)
 
 with col2:
-    st.markdown("## ?C��mo se obtiene el IPC?")
+    st.markdown("## ¿Cómo se obtiene el IPC?")
     st.write(
-    """Todos los meses encuestadores del INE se encargan de registrar el precio de los productos que consumen los hogares, visitando almacenes de barrio, ferias, supermercados, grandes tiendas, etc. Además, se visitan hogares particulares para consultar valores pagados por arriendo o servicio doméstico.
-    Los productos medidos componen la canasta de bienes y servicios, que está compuesta por 321 productos, desde elementos básicos como pan y arroz, hasta productos o servicios de recreación, como una entrada al cine o un televisor. Es de notar que estos 303 productos son los más consumidos por las familias chilenas."""
+    """Todos los meses encuestadores del INE se encargan de registrar el precio de los productos que consumen los hogares, visitando almacenes de barrio, ferias, supermercados, grandes tiendas, etc. Además, se visitan hogares particulares para consultar valores pagados por arriendo o servicio domestico.
+    Los productos medidos componen la canasta de bienes y servicios, que está compuesta por 321 productos, desde elementos básicos como pan y arroz, hasta productos o servicios de recreación, como una entrada al cine o un televisor. Es de notar que estos 303 productos son los mÃ¡s consumidos por las familias chilenas."""
     )
 
-st.sidebar.success("? Si el grafico y texto se ve mal, prueba cambiando la configuraci��n a Wide Mode")
+st.sidebar.success("⚙ Si el grafico y texto se ve mal, prueba cambiando la configuración a Wide Mode")
 
-st.markdown("## Evoluci��n de IPC por concepto")
+st.markdown("## Evolución de IPC por concepto")
 
 st.markdown("### Prueba presionando en cada concepto a la derecha del grafico de abajo")
 
