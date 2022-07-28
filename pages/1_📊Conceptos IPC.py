@@ -32,7 +32,7 @@ with col2:
     Los productos medidos componen la canasta de bienes y servicios, que está compuesta por 321 productos, desde elementos básicos como pan y arroz, hasta productos o servicios de recreación, como una entrada al cine o un televisor. Es de notar que estos 303 productos son los más consumidos por las familias chilenas."""
     )
 
-st.sidebar.success("""? Si el grafico y texto se ve mal, prueba cambiando la configuraci��n a "Wide Mode"""")
+st.sidebar.success("? Si el grafico y texto se ve mal, prueba cambiando la configuraci��n a Wide Mode")
 
 st.markdown("## Evolución de IPC por concepto")
 
