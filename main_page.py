@@ -34,6 +34,8 @@ def main_page():
        
     st.markdown("### Prueba haciendo Zoom en el siguiente grafico para ver su evolución en el tiempo")
     
+    st.sidebar.success("⬆️ Ir a la otra pagina para saber mas!")
+    
     @st.experimental_memo(ttl=60 * 60 * 24)
     def get_chart(data):
         hover = alt.selection_single(
