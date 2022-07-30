@@ -7,18 +7,18 @@ st.markdown("# Conceptos que componen el IPC")
 
 Ponderacion = pd.read_csv('Data/Ponderacion.csv', delimiter=';')
 
-colors = ['#FF0000',
-          '#FF8000',
-          '#FFFF00',
-          '#80FF00',
-          '#00FF00',
-          '#00FF80',
-          '#00FFFF',
-          '#0080FF',
-          '#0000FF',
-          '#7F00FF',
-          '#FF00FF',
-          '#FF007F'
+colors = ['#ffb3ba',
+          '#ffdfba',
+          '#ffffba',
+          '#baffc9',
+          '#bae1ff',
+          '#96ceb4',
+          '#ffeead',
+          '#ff6f69',
+          '#ffcc5c',
+          '#88d8b0',
+          '#e1f7d5',
+          '#c9c9ff'
           ]
           
 col1, col2 = st.columns(2)
@@ -30,9 +30,9 @@ with col1:
         emoji= "{'Alimentos': '🍞', 'Alcohol y tabaco': '🍷', 'Vestuario': '👚', 'Vivienda y servicios': '🏡',  'Equipamiento vivienda': '🛠', 'Salud': '🏥',  'Transporte': '🚌', 'Comunicaciones': '📱', 'Cultura': '🎭', 'Educación': '📚', 'Restaurantes y hoteles': '🏨', 'Bienes y servicios diversos': '📦'}[datum.Descripción]"
     )
 
-    pie = base.mark_arc(outerRadius=60)
-    text = base.mark_text(radius=70).encode(text="Porcentaje:N")
-    text2 = base.mark_text(radius=90).encode(text="emoji:N")
+    pie = base.mark_arc(outerRadius=80)
+    text = base.mark_text(radius=100, size=15).encode(text="Porcentaje:N")
+    text2 = base.mark_text(radius=125, size=20).encode(text="emoji:N")
 
 
     st.altair_chart(pie + text + text2, use_container_width=False)
