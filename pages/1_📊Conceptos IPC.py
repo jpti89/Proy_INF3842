@@ -66,7 +66,7 @@ points = base.mark_circle().encode(
 ).add_selection(
     highlight
 ).properties(
-    width=900
+    width=1900
 ).interactive()
 
 lines = base.mark_line().encode(
