@@ -66,7 +66,7 @@ def main_page():
                 y="Indice",
                 opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
                 tooltip=[
-                    alt.Tooltip("Periodo", title="Periodo"),
+                    alt.Tooltip("Periodo:T", title="Periodo"),
                     alt.Tooltip("Indice", title="Indice"),
                 ],
             )
