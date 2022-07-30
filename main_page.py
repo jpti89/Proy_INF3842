@@ -51,7 +51,7 @@ def main_page():
         alt.Y('Indice:Q',
             scale=alt.Scale(domain=(90, 130))
         ),
-        x='Periodo'
+        x='Periodo:T'
         )
         
         
