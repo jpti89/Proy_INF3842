@@ -52,17 +52,26 @@ st.markdown("### Prueba presionando en cada concepto a la derecha del grafico de
 
 Apertura = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
 
-selection = alt.selection_multi(fields=['Concepto'], bind='legend')
+highlight = alt.selection(type='single', on='mouseover',
+                          fields=['Concepto'], nearest=True)
 
-c = alt.Chart(Apertura).mark_area().encode(
-    alt.X('Fecha:T', axis=alt.Axis(domain=False, format='%Y-%m',tickSize=0)),
-    alt.Y('sum(Valor Ponderado):Q', stack='zero', title='Indice Ponderado'),
-    alt.Color('Concepto:N', scale=alt.Scale(range= colors)),
-    opacity=alt.condition(selection, alt.value(1), alt.value(0.2))
+base = alt.Chart(Apertura).encode(
+    x='Fecha:T',
+    y='Variación porcentual:Q',
+    color=alt.Color('Concepto:N', scale=alt.Scale(range= colors))
+)
+
+points = base.mark_circle().encode(
+    opacity=alt.value(0)
 ).add_selection(
-    selection
+    highlight
 ).properties(
-    width=900
+    width=600
 ).interactive()
 
-st.altair_chart(c, use_container_width=True)
+lines = base.mark_line().encode(
+    size=alt.condition(~highlight, alt.value(1), alt.value(3))
+)
+
+
+points + lines
