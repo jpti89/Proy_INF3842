@@ -2,6 +2,8 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 def main_page():
 
     st.title("Evolución del IPC en Chile ")

@@ -2,7 +2,7 @@
 import altair as alt
 import pandas as pd
 
-st.set_page_config(page_title="Conceptos IPC", page_icon="📊")
+st.set_page_config(page_title="Conceptos IPC", page_icon="📊", layout="wide")
 st.markdown("# Conceptos que componen el IPC")
 
 Ponderacion = pd.read_csv('Data/Ponderacion.csv', delimiter=';')
