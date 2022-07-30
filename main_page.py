@@ -51,7 +51,7 @@ def main_page():
         alt.Y('Indice:Q',
             scale=alt.Scale(domain=(90, 130))
         ),
-        x='Periodo:T'
+        x='Periodo'
         )
         
         
@@ -62,7 +62,7 @@ def main_page():
             alt.Chart(data)
             .mark_rule()
             .encode(
-                x="Periodo",
+                x="yearmonthdate(Periodo)",
                 y="Indice",
                 opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
                 tooltip=[
