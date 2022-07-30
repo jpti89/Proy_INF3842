@@ -30,9 +30,9 @@ with col1:
         emoji= "{'Alimentos': '🍞', 'Alcohol y tabaco': '🍷', 'Vestuario': '👚', 'Vivienda y servicios': '🏡',  'Equipamiento vivienda': '🛠', 'Salud': '🏥',  'Transporte': '🚌', 'Comunicaciones': '📱', 'Cultura': '🎭', 'Educación': '📚', 'Restaurantes y hoteles': '🏨', 'Bienes y servicios diversos': '📦'}[datum.Descripción]"
     )
 
-    pie = base.mark_arc(outerRadius=150)
-    text = base.mark_text(radius=170, size=20).encode(text="Porcentaje:N")
-    text2 = base.mark_text(radius=210, size=40).encode(text="emoji:N")
+    pie = base.mark_arc(outerRadius=60)
+    text = base.mark_text(radius=70).encode(text="Porcentaje:N")
+    text2 = base.mark_text(radius=90).encode(text="emoji:N")
 
 
     st.altair_chart(pie + text + text2, use_container_width=False)
