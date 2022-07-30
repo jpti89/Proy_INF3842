@@ -28,6 +28,8 @@ with col1:
     theta=alt.Theta("Ponderacion:Q", stack=True), color=alt.Color("Descripción:N", legend= None,scale=alt.Scale(range= colors))
     ).transform_calculate(
         emoji= "{'Alimentos': '🍞', 'Alcohol y tabaco': '🍷', 'Vestuario': '👚', 'Vivienda y servicios': '🏡',  'Equipamiento vivienda': '🛠', 'Salud': '🏥',  'Transporte': '🚌', 'Comunicaciones': '📱', 'Cultura': '🎭', 'Educación': '📚', 'Restaurantes y hoteles': '🏨', 'Bienes y servicios diversos': '📦'}[datum.Descripción]"
+    ).properties(
+    width=800,height=500
     )
 
     pie = base.mark_arc(outerRadius=80)
