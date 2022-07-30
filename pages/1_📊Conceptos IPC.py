@@ -46,9 +46,6 @@ with col2:
     Los productos medidos componen la canasta de bienes y servicios, que está compuesta por 321 productos, desde elementos básicos como pan y arroz, hasta productos o servicios de recreación, como una entrada al cine o un televisor. Es de notar que estos 303 productos son los mÃ¡s consumidos por las familias chilenas."""
     )
 
-
-st.sidebar.success("⚙ Si el grafico y texto se ve mal, prueba cambiando la configuración a Wide Mode")
-
 st.markdown("## Evolución de IPC por concepto")
 
 st.markdown("### Prueba presionando en cada concepto a la derecha del grafico de abajo")
@@ -58,7 +55,7 @@ Apertura = pd.read_csv('Data/Apertura IPC.csv', delimiter=';')
 selection = alt.selection_multi(fields=['Concepto'], bind='legend')
 
 c = alt.Chart(Apertura).mark_area().encode(
-    alt.X('Fecha:T', axis=alt.Axis(domain=False, tickSize=0)),
+    alt.X('Fecha:T', axis=alt.Axis(domain=False, format='%Y-%m',tickSize=0)),
     alt.Y('sum(Valor Ponderado):Q', stack='zero', title='Indice Ponderado'),
     alt.Color('Concepto:N', scale=alt.Scale(range= colors)),
     opacity=alt.condition(selection, alt.value(1), alt.value(0.2))
