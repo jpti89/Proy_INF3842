@@ -62,7 +62,7 @@ def main_page():
             alt.Chart(data)
             .mark_rule()
             .encode(
-                x="yearmonthdate(Periodo)",
+                x="Periodo",
                 y="Indice",
                 opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
                 tooltip=[
