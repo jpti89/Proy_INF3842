@@ -66,6 +66,6 @@ c = alt.Chart(Apertura).mark_area().encode(
     selection
 ).properties(
     width=900
-)
+).interactive()
 
 st.altair_chart(c, use_container_width=True)
