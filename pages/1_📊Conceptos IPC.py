@@ -32,9 +32,9 @@ with col1:
     width=800,height=500
     )
 
-    pie = base.mark_arc(outerRadius=80)
-    text = base.mark_text(radius=100, size=15).encode(text="Porcentaje:N")
-    text2 = base.mark_text(radius=125, size=20).encode(text="emoji:N")
+    pie = base.mark_arc(outerRadius=130)
+    text = base.mark_text(radius=160, size=20).encode(text="Porcentaje:N")
+    text2 = base.mark_text(radius=225, size=30).encode(text="emoji:N")
 
 
     st.altair_chart(pie + text + text2, use_container_width=False)
