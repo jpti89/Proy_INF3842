@@ -68,6 +68,7 @@ def main_page():
                 tooltip=[
                     alt.Tooltip("Periodo:T", title="Periodo"),
                     alt.Tooltip("Indice", title="Indice"),
+                    alt.Tooltip("Varacion porcentual", title="Varacion Mes"),
                 ],
             )
             .add_selection(hover)
